@@ -51,15 +51,23 @@ const styles = StyleSheet.create({
         marginTop: selectedInstrumentBackdropMargin,
         marginBottom: selectedInstrumentBackdropMargin
     },
-    selectedInstrumentImage: {
-        resizeMode: Image.resizeMode.center
-    },
     imageContainer: {
         backgroundColor: 'green',
         borderRadius: 80,
         height: 160,
         width: 160,
         margin: -selectedInstrumentBackdropMargin
+    },
+    selectedInstrumentImage: {
+        resizeMode: Image.resizeMode.contain,
+
+        flex: 1,
+        alignSelf: 'stretch',
+        borderRadius: 80,
+        // width and height must be overridden in order to
+        // fit to the container
+        width: undefined,
+        height: undefined
     },
     instrumentsScrollView: {
         backgroundColor: color1,
