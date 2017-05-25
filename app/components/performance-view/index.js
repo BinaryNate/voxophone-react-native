@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import MusicNoteMeter from '../music-note-meter';
 
 /**
 * The main, top-level application component in which constituent components are nested.
@@ -17,7 +18,7 @@ export default class PerformanceView extends Component {
                 <View style={styles.performanceView}>
 
                     <View style={styles.musicNoteMeterContainer}>
-                        <Text>Music note meter goes here</Text>
+                        <MusicNoteMeter/>
                         {/*<m:music-note-meter dependencies="{{ dependencies }}"/>*/}
                     </View>
                     <Text>Instrument picker goes here</Text>
@@ -34,7 +35,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     musicNoteMeterContainer: {
-        flex: 1,
+        flexGrow: 1,
+        flexShrink: 1,
         marginLeft: 20,
         marginRight: 20
     }

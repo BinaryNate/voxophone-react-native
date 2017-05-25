@@ -36,6 +36,7 @@
     "no-unused-vars": 2,
     "no-undef": 2,
     "no-loop-func": 2,
-    "react/jsx-uses-vars": 2
+    "react/jsx-uses-vars": 2,
+    "react/jsx-uses-react": 2
   }
 }
