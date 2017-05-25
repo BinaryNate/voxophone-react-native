@@ -8,6 +8,19 @@ import { color1 } from '../../style-variables';
 */
 export default class InstrumentPicker extends Component {
 
+    constructor() {
+
+        super(...arguments);
+        this._instruments = [
+            {
+                imageSource: 'test1'
+            },
+            {
+                imageSource: 'test2'
+            }
+        ];
+    }
+
     render() {
         return (
 
@@ -19,18 +32,9 @@ export default class InstrumentPicker extends Component {
                     </View>
                 </View>
 
-                <ScrollView horizontal={true}>
-                    <Text>(instrument goes here)</Text>
-                    {/*
-                    <Repeater items="{{ instrumentOptions }}" row="1" style={instrumentsScrollView}>
-                        <Repeater.itemsLayout>
-                            <StackLayout orientation="horizontal" />
-                        </Repeater.itemsLayout>
-                        <Repeater.itemTemplate>
-                            <i:instrument class="instrument"/>
-                        </Repeater.itemTemplate>
-                    </Repeater>
-                    */}
+                <ScrollView horizontal={true} style={styles.instrumentsScrollView}>
+                    <Text>(instruments go here)</Text>
+                    {this._instruments.map(instrument => (<Text key={instrument.imageSource}>{instrument.imageSource}</Text>))}
                 </ScrollView>
             </View>
         );

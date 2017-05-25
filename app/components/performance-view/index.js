@@ -11,11 +11,6 @@ export default class PerformanceView extends Component {
     render() {
         return (
             <View>
-                {/*
-                <ActionBar>
-                  <NavigationButton visibility="collapsed"/>
-                </ActionBar>
-                */}
                 <View style={styles.performanceView}>
 
                     <View style={styles.musicNoteMeterContainer}>
