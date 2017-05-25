@@ -1,9 +1,7 @@
 import { validate } from 'parameter-validator';
 import Component from 'nativescript-component';
-
 /**
 * Displays the available instruments for selection and the currently selected instrument.
-*
 */
 class InstrumentPicker extends Component {
 

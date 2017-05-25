@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import InstrumentPicker from '../instrument-picker';
 import MusicNoteMeter from '../music-note-meter';
 
 /**
@@ -21,7 +22,7 @@ export default class PerformanceView extends Component {
                         <MusicNoteMeter/>
                         {/*<m:music-note-meter dependencies="{{ dependencies }}"/>*/}
                     </View>
-                    <Text>Instrument picker goes here</Text>
+                    <InstrumentPicker/>
                     {/*<i:instrument-picker dependencies="{{ dependencies }}"/>*/}
                 </View>
             </View>
