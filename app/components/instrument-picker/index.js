@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import Color from 'color';
 import { color1 } from '../../style-variables';
 
 /**
@@ -14,10 +15,7 @@ export default class InstrumentPicker extends Component {
 
                 <View style={styles.selectedInstrument}>
                     <View style={styles.imageContainer}>
-                        {/**/}
                         <Image style={styles.selectedInstrumentImage} source={require('./music-box.jpg')}/>
-
-                        <Text>Does this appear?</Text>
                     </View>
                 </View>
 
@@ -47,12 +45,13 @@ const styles = StyleSheet.create({
 
     },
     selectedInstrument: {
-        backgroundColor: color1 - 45,
+        backgroundColor: Color(color1).darken(0.1).rgb(),
         marginTop: selectedInstrumentBackdropMargin,
-        marginBottom: selectedInstrumentBackdropMargin
+        marginBottom: selectedInstrumentBackdropMargin,
+        alignItems: 'center'
     },
     imageContainer: {
-        backgroundColor: 'green',
+        backgroundColor: 'white',
         borderRadius: 80,
         height: 160,
         width: 160,

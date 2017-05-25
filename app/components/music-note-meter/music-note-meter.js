@@ -1,6 +1,6 @@
 import { validate } from 'parameter-validator';
 import { FlexboxLayout, AlignItems, JustifyContent } from 'ui/layouts/flexbox-layout';
-import { Color } from 'color';
+import { Color } from 'color'; // NativeScript color module
 import ColorEditor from '../../utils/Color';
 import Component from 'nativescript-component';
 import { MusicNoteEventType } from 'nativescript-voxophone-engine';
