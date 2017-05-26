@@ -1,5 +1,5 @@
+import fs from 'react-native-fs';
 import { validate } from 'parameter-validator';
-import { Folder, File } from 'file-system';
 
 /**
 * Implements database-like, file system-based storage for JSON objects using
@@ -19,18 +19,12 @@ export default class FileSystemJsonStorage {
     */
     query() {
 
-        return Promise.resolve()
-        .then(() => {
+        return fs.readDir(this._directoryPath)
+        .then(items => {
 
-            let storageDirectory = Folder.fromPath(this._directoryPath);
-            return storageDirectory.getEntities();
-        })
-        .then(entities => {
+            let jsonFiles = items.filter(item => item.isFile() && item.name.subst(-5) === '.json');
 
-            let jsonFiles = entities.filter(entity => entity instanceof File)
-                                    .filter(({ extension }) => extension === '.json');
-
-            let promisedSerializedEntities = jsonFiles.map(file => file.readText());
+            let promisedSerializedEntities = jsonFiles.map(file => fs.readFile(file.path));
             return Promise.all(promisedSerializedEntities);
         })
         .then(serializedEntities => {
