@@ -18,10 +18,10 @@ export default class FileSystemJsonStorage {
     * @return {Promise.<Array>}
     */
     query() {
-
+        debugger;
         return fs.readDir(this._directoryPath)
         .then(items => {
-
+            debugger;
             let jsonFiles = items.filter(item => item.isFile() && item.name.subst(-5) === '.json');
 
             let promisedSerializedEntities = jsonFiles.map(file => fs.readFile(file.path));
