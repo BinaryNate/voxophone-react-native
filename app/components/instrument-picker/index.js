@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import Color from 'color';
+import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
 
 /**
@@ -11,15 +12,27 @@ export default class InstrumentPicker extends Component {
     constructor() {
 
         super(...arguments);
-        this._instruments = [
-            {
-                imageSource: 'test1'
-            },
-            {
-                imageSource: 'test2'
-            }
-        ];
+        validate(this.props.dependencies, [ 'voxophone', 'instrumentManager' ], this, { addPrefix: '_' });
+
+        this.state = {
+            instrumentOptions: [],
+            selectedInstrumentImageSource: null
+        };
+
+        this._instrumentManager.getInstruments()
+        .then(instruments => {
+            // The context objects that will be bound to the nested `instrument` components.
+            let instrumentOptions = instruments.map(instrument => ({
+                // Pass the child a component a function it can call to set its instrument as the selected one.
+                selectInstrument: () => this._setInstrument(instrument),
+                imageSource: instrument.imageInfo.filePath
+            }));
+            this.setState({ instrumentOptions });
+            this._setInstrument(instruments[0]);
+        });
     }
+
+
 
     render() {
         return (
@@ -28,16 +41,22 @@ export default class InstrumentPicker extends Component {
 
                 <View style={styles.selectedInstrument}>
                     <View style={styles.imageContainer}>
-                        <Image style={styles.selectedInstrumentImage} source={require('./music-box.jpg')}/>
+                        <Image style={styles.selectedInstrumentImage} source={this.state.selectedInstrumentImageSource}/>
                     </View>
                 </View>
 
                 <ScrollView horizontal={true} style={styles.instrumentsScrollView}>
                     <Text>(instruments go here)</Text>
-                    {this._instruments.map(instrument => (<Text key={instrument.imageSource}>{instrument.imageSource}</Text>))}
+                    {this.state.instrumentOptions.map(instrument => (<Text key={instrument.imageSource}>{instrument.imageSource}</Text>))}
                 </ScrollView>
             </View>
         );
+    }
+
+    _setInstrument(instrument) {
+
+        this._voxophone.setInstrument({ instrument });
+        this.setState({ selectedInstrumentImageSource: instrument.imageInfo.filePath });
     }
 }
 

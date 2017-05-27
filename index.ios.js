@@ -25,11 +25,11 @@ let voxophone = {
     setInstrument() {}
 };
 
-// let dependencies = {
-//     logger,
-//     voxophone,
-//     instrumentManager
-// };
+const dependencies = {
+    logger,
+    voxophone,
+    instrumentManager
+};
 
 // Go ahead and set the initial instrument voice.
 logger.info('Getting the instruments...');
@@ -46,7 +46,7 @@ instrumentManager.getInstruments()
 export default class Voxophone extends Component {
 
     render() {
-        return (<PerformanceView/>);
+        return (<PerformanceView dependencies={dependencies}/>);
     }
 }
 
