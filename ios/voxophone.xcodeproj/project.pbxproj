@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* voxophoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* voxophoneTests.m */; };
+		03C0D5124C5846DA9AC93BAE /* libSDVoxophoneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC31B5D4532945AABCC198A3 /* libSDVoxophoneEngine.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -38,7 +39,6 @@
 		6259C41B1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 6259C41A1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 */; };
 		6282E7601ED7F27300F733DB /* data in Resources */ = {isa = PBXBuildFile; fileRef = 6282E75F1ED7F27300F733DB /* data */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		83B457297ABD4D1080C44134 /* libSDVoxophoneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C70424BD65446997756FDC /* libSDVoxophoneEngine.a */; };
 		90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */; };
 /* End PBXBuildFile section */
 
@@ -218,9 +218,9 @@
 			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
 			remoteInfo = "RCTAnimation-tvOS";
 		};
-		6259C4181EDB354200378493 /* PBXContainerItemProxy */ = {
+		621154A91EDB548400FD0AED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */;
+			containerPortal = 2F609E3C90564E4BAD73E096 /* SDVoxophoneEngine.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = SDVoxophoneEngine;
@@ -270,14 +270,14 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* voxophone-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "voxophone-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* voxophone-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voxophone-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C70424BD65446997756FDC /* libSDVoxophoneEngine.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSDVoxophoneEngine.a; sourceTree = "<group>"; };
+		2F609E3C90564E4BAD73E096 /* SDVoxophoneEngine.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SDVoxophoneEngine.xcodeproj; path = "../node_modules/react-native-voxophone-engine/ios/SDVoxophoneEngine.xcodeproj"; sourceTree = "<group>"; };
 		590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6259C41A1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GeneralUser GS MuseScore v1.442.sf2"; path = "../node_modules/react-native-voxophone-engine/ios/lib/voxophone-ios/src/GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 		6282E75F1ED7F27300F733DB /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../app/data; sourceTree = "<group>"; };
-		6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SDVoxophoneEngine.xcodeproj; path = "../node_modules/react-native-voxophone-engine/ios/SDVoxophoneEngine.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		DC31B5D4532945AABCC198A3 /* libSDVoxophoneEngine.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSDVoxophoneEngine.a; sourceTree = "<group>"; };
 		FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -306,7 +306,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */,
-				83B457297ABD4D1080C44134 /* libSDVoxophoneEngine.a in Frameworks */,
+				03C0D5124C5846DA9AC93BAE /* libSDVoxophoneEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,10 +451,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6259C3FB1EDB354200378493 /* Products */ = {
+		6211548C1EDB548400FD0AED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6259C4191EDB354200378493 /* libSDVoxophoneEngine.a */,
+				621154AA1EDB548400FD0AED /* libSDVoxophoneEngine.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,7 +491,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */,
-				6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */,
+				2F609E3C90564E4BAD73E096 /* SDVoxophoneEngine.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -689,8 +689,8 @@
 					ProjectRef = 590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */;
 				},
 				{
-					ProductGroup = 6259C3FB1EDB354200378493 /* Products */;
-					ProjectRef = 6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */;
+					ProductGroup = 6211548C1EDB548400FD0AED /* Products */;
+					ProjectRef = 2F609E3C90564E4BAD73E096 /* SDVoxophoneEngine.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -865,11 +865,11 @@
 			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6259C4191EDB354200378493 /* libSDVoxophoneEngine.a */ = {
+		621154AA1EDB548400FD0AED /* libSDVoxophoneEngine.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDVoxophoneEngine.a;
-			remoteRef = 6259C4181EDB354200378493 /* PBXContainerItemProxy */;
+			remoteRef = 621154A91EDB548400FD0AED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6282E75E1ED7F24A00F733DB /* libRNFS.a */ = {

@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint app index.ios.js"
+    "lint": "eslint app index.ios.js",
+    "uninstall-engine": "react-native uninstall react-native-voxophone-engine",
+    "install-engine": "npm i git://git@bitbucket.org:binarynate/react-native-voxophone-engine.git --save && react-native link react-native-voxophone-engine",
+    "reinstall-engine": "npm run uninstall-engine && npm run install-engine"
   },
   "dependencies": {
     "color": "^1.0.3",

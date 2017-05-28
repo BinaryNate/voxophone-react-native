@@ -25,7 +25,7 @@ let instrumentManager = new InstrumentManager({
 //     setInstrument() {}
 // };
 
-const voxophone = new VoxophoneEngine();
+const voxophone = new VoxophoneEngine({ logger });
 
 const dependencies = {
     logger,

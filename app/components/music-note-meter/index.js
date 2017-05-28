@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
 
 /**
@@ -7,6 +8,13 @@ import { color1 } from '../../style-variables';
 * displays the name of the note being played (e.g. "C#").
 */
 export default class MusicNoteMeter extends Component {
+
+    constructor(props) {
+
+        super(props);
+        validate(props.dependencies, [ 'logger', 'voxophone' ], this, { addPrefix: '_' });
+        this._voxophone.addMusicNoteListener(this._handleMusicNoteEvent.bind(this));
+    }
 
     render() {
         return (
@@ -18,6 +26,11 @@ export default class MusicNoteMeter extends Component {
                 </View>
             </View>
         );
+    }
+
+    _handleMusicNoteEvent(event) {
+
+        this._logger.info('received music note event: ' + JSON.stringify(event));
     }
 }
 
