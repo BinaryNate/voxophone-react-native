@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -38,6 +37,7 @@
 		6282E7601ED7F27300F733DB /* data in Resources */ = {isa = PBXBuildFile; fileRef = 6282E75F1ED7F27300F733DB /* data */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */; };
+		FA0C049FC29F476CB6496F11 /* libSDVoxophoneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5EF3480DD7458589166576 /* libSDVoxophoneEngine.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +267,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
+		72FF7D2A90F9401F84D5869A /* SDVoxophoneEngine.xcodeproj */ = {isa = PBXFileReference; name = "SDVoxophoneEngine.xcodeproj"; path = "../node_modules/react-native-voxophone-engine/ios/SDVoxophoneEngine.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		5B5EF3480DD7458589166576 /* libSDVoxophoneEngine.a */ = {isa = PBXFileReference; name = "libSDVoxophoneEngine.a"; path = "libSDVoxophoneEngine.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */,
+				FA0C049FC29F476CB6496F11 /* libSDVoxophoneEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +473,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */,
+				72FF7D2A90F9401F84D5869A /* SDVoxophoneEngine.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1001,6 +1005,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = voxophoneTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1026,6 +1031,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = voxophoneTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1052,6 +1058,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = voxophone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1073,6 +1080,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = voxophone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1101,6 +1109,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = "voxophone-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1135,6 +1144,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-voxophone-engine/ios/**",
 				);
 				INFOPLIST_FILE = "voxophone-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

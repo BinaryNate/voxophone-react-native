@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
+import { AppRegistry } from 'react-native';
 import { MainBundlePath } from 'react-native-fs';
 import PerformanceView from './app/components/performance-view';
 import Logger from './app/utils/Logger';
-// import VoxophoneEngine from 'nativescript-voxophone-engine';
+import VoxophoneEngine from 'react-native-voxophone-engine';
 import FileSystemJsonStorage from './app/models/storage/FileSystemJsonStorage';
 import FileInfoStorage from './app/models/storage/FileInfoStorage';
 import InstrumentManager from './app/models/InstrumentManager';
@@ -20,10 +20,12 @@ let instrumentManager = new InstrumentManager({
 });
 
 // Use this stub for the voxophone audio engine until a wrapper for the audio engine is created.
-let voxophone = {
-    addMusicNoteListener() {},
-    setInstrument() {}
-};
+// let voxophone = {
+//     addMusicNoteListener() {},
+//     setInstrument() {}
+// };
+
+const voxophone = new VoxophoneEngine();
 
 const dependencies = {
     logger,
@@ -35,7 +37,6 @@ const dependencies = {
 logger.info('Getting the instruments...');
 instrumentManager.getInstruments()
 .then(instruments => {
-    logger.info('Successfully fetched the instruments!', { instruments });
     voxophone.setInstrument({ instrument: instruments[0] });
 })
 .catch(error => {

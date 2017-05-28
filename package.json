@@ -2,16 +2,10 @@
   "description": "The Voxophone music app: you sing and it turns your voice into a musical instrument.",
   "license": "MIT",
   "repository": "https://github.com/BinaryNate/voxophone",
-  "nativescript": {
-    "id": "design.sonic.voxophone",
-    "tns-ios": {
-      "version": "2.5.0"
-    }
-  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint app"
+    "lint": "eslint app index.ios.js"
   },
   "dependencies": {
     "color": "^1.0.3",
@@ -22,6 +16,7 @@
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
     "react-native-fs": "^2.3.2",
+    "react-native-voxophone-engine": "git+ssh://git@bitbucket.org/binarynate/react-native-voxophone-engine.git",
     "tns-core-modules": "2.5.2",
     "uuid": "^3.0.1",
     "winston": "^2.3.1"
