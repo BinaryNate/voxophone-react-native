@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
         margin: -selectedInstrumentBackdropMargin,
         height: 160,
         width: 160,
+        backgroundColor: 'white'
     },
     instrumentsScrollView: {
         backgroundColor: color1,
