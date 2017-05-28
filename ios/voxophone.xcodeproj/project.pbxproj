@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -34,10 +35,11 @@
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* voxophoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* voxophoneTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		6259C41B1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 6259C41A1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 */; };
 		6282E7601ED7F27300F733DB /* data in Resources */ = {isa = PBXBuildFile; fileRef = 6282E75F1ED7F27300F733DB /* data */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		83B457297ABD4D1080C44134 /* libSDVoxophoneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C70424BD65446997756FDC /* libSDVoxophoneEngine.a */; };
 		90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */; };
-		FA0C049FC29F476CB6496F11 /* libSDVoxophoneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5EF3480DD7458589166576 /* libSDVoxophoneEngine.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +218,13 @@
 			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
 			remoteInfo = "RCTAnimation-tvOS";
 		};
+		6259C4181EDB354200378493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = SDVoxophoneEngine;
+		};
 		6282E75D1ED7F24A00F733DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */;
@@ -261,14 +270,15 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* voxophone-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "voxophone-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* voxophone-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voxophone-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C70424BD65446997756FDC /* libSDVoxophoneEngine.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSDVoxophoneEngine.a; sourceTree = "<group>"; };
 		590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		6259C41A1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GeneralUser GS MuseScore v1.442.sf2"; path = "../node_modules/react-native-voxophone-engine/ios/lib/voxophone-ios/src/GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 		6282E75F1ED7F27300F733DB /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../app/data; sourceTree = "<group>"; };
+		6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SDVoxophoneEngine.xcodeproj; path = "../node_modules/react-native-voxophone-engine/ios/SDVoxophoneEngine.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		FF4F5DAEF99F44379F71F5C5 /* libRNFS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFS.a; sourceTree = "<group>"; };
-		72FF7D2A90F9401F84D5869A /* SDVoxophoneEngine.xcodeproj */ = {isa = PBXFileReference; name = "SDVoxophoneEngine.xcodeproj"; path = "../node_modules/react-native-voxophone-engine/ios/SDVoxophoneEngine.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		5B5EF3480DD7458589166576 /* libSDVoxophoneEngine.a */ = {isa = PBXFileReference; name = "libSDVoxophoneEngine.a"; path = "libSDVoxophoneEngine.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +306,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				90D13DC13EE1454C9B95F1DB /* libRNFS.a in Frameworks */,
-				FA0C049FC29F476CB6496F11 /* libSDVoxophoneEngine.a in Frameworks */,
+				83B457297ABD4D1080C44134 /* libSDVoxophoneEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +451,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6259C3FB1EDB354200378493 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6259C4191EDB354200378493 /* libSDVoxophoneEngine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6282E7411ED7F24A00F733DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,7 +491,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */,
-				72FF7D2A90F9401F84D5869A /* SDVoxophoneEngine.xcodeproj */,
+				6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -490,6 +508,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6259C41A1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 */,
 				13B07FAE1A68108700A75B9A /* voxophone */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* voxophoneTests */,
@@ -669,6 +688,10 @@
 					ProductGroup = 6282E7411ED7F24A00F733DB /* Products */;
 					ProjectRef = 590AEED003E3431794A0D4B8 /* RNFS.xcodeproj */;
 				},
+				{
+					ProductGroup = 6259C3FB1EDB354200378493 /* Products */;
+					ProjectRef = 6CD61FB634DE45DDBB0714B9 /* SDVoxophoneEngine.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -842,6 +865,13 @@
 			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6259C4191EDB354200378493 /* libSDVoxophoneEngine.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDVoxophoneEngine.a;
+			remoteRef = 6259C4181EDB354200378493 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		6282E75E1ED7F24A00F733DB /* libRNFS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -877,6 +907,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6259C41B1EDB359C00378493 /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				6282E7601ED7F27300F733DB /* data in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
