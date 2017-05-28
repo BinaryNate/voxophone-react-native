@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, StyleSheet } from 'react-native';
 import Color from 'color';
 import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
@@ -38,9 +38,7 @@ export default class InstrumentPicker extends Component {
         return (
             <View style={styles.instrumentPicker}>
                 <View style={styles.selectedInstrument}>
-                    <View style={styles.imageContainer}>
-                        <Image style={styles.selectedInstrumentImage} source={{ uri: this.state.selectedInstrumentImageSource }}/>
-                    </View>
+                    <Image style={styles.selectedInstrumentImage} source={{ uri: this.state.selectedInstrumentImageSource }} />
                 </View>
                 <ScrollView horizontal={true} style={styles.instrumentsScrollView}>
                     {this.state.instrumentOptions.map(({ imageSource, handleInstrumentSelected, key }) => (<Instrument imageSource={imageSource} onSelected={handleInstrumentSelected} key={key} />))}
@@ -67,25 +65,15 @@ const styles = StyleSheet.create({
         backgroundColor: Color(color1).darken(0.1).rgb(),
         marginTop: selectedInstrumentBackdropMargin,
         marginBottom: selectedInstrumentBackdropMargin,
-        alignItems: 'center'
-    },
-    imageContainer: {
-        backgroundColor: 'white',
-        borderRadius: 80,
-        height: 160,
-        width: 160,
-        margin: -selectedInstrumentBackdropMargin
+        alignItems: 'center',
+        overflow: 'hidden'
     },
     selectedInstrumentImage: {
-        resizeMode: Image.resizeMode.contain,
 
-        flex: 1,
-        alignSelf: 'stretch',
         borderRadius: 80,
-        // width and height must be overridden in order to
-        // fit to the container
-        width: undefined,
-        height: undefined
+        margin: -selectedInstrumentBackdropMargin,
+        height: 160,
+        width: 160,
     },
     instrumentsScrollView: {
         backgroundColor: color1,
