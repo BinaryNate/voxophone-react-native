@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 import Color from 'color';
 import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
+import Instrument from '../instrument';
 
 /**
 * Displays the available instruments for selection and the currently selected instrument.
@@ -24,30 +25,25 @@ export default class InstrumentPicker extends Component {
             // The context objects that will be bound to the nested `instrument` components.
             let instrumentOptions = instruments.map(instrument => ({
                 // Pass the child a component a function it can call to set its instrument as the selected one.
-                selectInstrument: () => this._setInstrument(instrument),
-                imageSource: instrument.imageInfo.filePath
+                handleInstrumentSelected: () => this._setInstrument(instrument),
+                imageSource: instrument.imageInfo.filePath,
+                key: instrument.id
             }));
             this.setState({ instrumentOptions });
             this._setInstrument(instruments[0]);
         });
     }
 
-
-
     render() {
         return (
-
             <View style={styles.instrumentPicker}>
-
                 <View style={styles.selectedInstrument}>
                     <View style={styles.imageContainer}>
                         <Image style={styles.selectedInstrumentImage} source={{ uri: this.state.selectedInstrumentImageSource }}/>
                     </View>
                 </View>
-
                 <ScrollView horizontal={true} style={styles.instrumentsScrollView}>
-                    <Text>(instruments go here)</Text>
-                    {this.state.instrumentOptions.map(instrument => (<Text key={instrument.imageSource}>{instrument.imageSource}</Text>))}
+                    {this.state.instrumentOptions.map(({ imageSource, handleInstrumentSelected, key }) => (<Instrument imageSource={imageSource} onSelected={handleInstrumentSelected} key={key} />))}
                 </ScrollView>
             </View>
         );

@@ -36,7 +36,12 @@
     "no-unused-vars": 2,
     "no-undef": 2,
     "no-loop-func": 2,
+    "react/jsx-closing-bracket-location": 2,
     "react/jsx-uses-vars": 2,
-    "react/jsx-uses-react": 2
+    "react/jsx-uses-react": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-no-bind": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-wrap-multilines": 2
   }
 }
