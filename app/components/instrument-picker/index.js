@@ -16,7 +16,7 @@ export default class InstrumentPicker extends Component {
 
         this.state = {
             instrumentOptions: [],
-            selectedInstrumentImageSource: null
+            selectedInstrumentImageSource: ''
         };
 
         this._instrumentManager.getInstruments()
@@ -41,7 +41,7 @@ export default class InstrumentPicker extends Component {
 
                 <View style={styles.selectedInstrument}>
                     <View style={styles.imageContainer}>
-                        <Image style={styles.selectedInstrumentImage} source={this.state.selectedInstrumentImageSource}/>
+                        <Image style={styles.selectedInstrumentImage} source={{ uri: this.state.selectedInstrumentImageSource }}/>
                     </View>
                 </View>
 
