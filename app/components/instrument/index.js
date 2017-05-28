@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { TouchableHighlight, Image, StyleSheet } from 'react-native';
 
 /**
 * An available instrument which can be selected.
@@ -8,9 +8,9 @@ export default class Instrument extends Component {
 
     render() {
         return (
-            <View style={styles.imageContainer} onPress={this.props.onSelected}>
-                <Image source={{ uri: this.props.imageSource }}/>
-            </View>
+            <TouchableHighlight style={styles.imageContainer} onPress={this.props.onSelected}>
+                <Image style={styles.image} source={{ uri: this.props.imageSource }}/>
+            </TouchableHighlight>
         );
     }
 
@@ -24,5 +24,9 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         height: 80,
         width: 80
+    },
+    image: {
+        flex: 1,
+        borderRadius: 40
     }
 });
