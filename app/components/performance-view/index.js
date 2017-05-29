@@ -10,14 +10,11 @@ export default class PerformanceView extends Component {
 
     render() {
         return (
-            <View>
-                <View style={styles.performanceView}>
-
-                    <View style={styles.musicNoteMeterContainer}>
-                        <MusicNoteMeter dependencies={this.props.dependencies} />
-                    </View>
-                    {<InstrumentPicker dependencies={this.props.dependencies} />}
+            <View style={styles.performanceView}>
+                <View style={styles.musicNoteMeterContainer}>
+                    <MusicNoteMeter dependencies={this.props.dependencies} />
                 </View>
+                {<InstrumentPicker dependencies={this.props.dependencies} />}
             </View>
         );
     }
@@ -26,7 +23,8 @@ export default class PerformanceView extends Component {
 const styles = StyleSheet.create({
 
     performanceView: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+        flex: 1
     },
     musicNoteMeterContainer: {
         flexGrow: 1,

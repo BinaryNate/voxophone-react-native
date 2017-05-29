@@ -36,7 +36,7 @@ export default class InstrumentPicker extends Component {
 
     render() {
         return (
-            <View style={styles.instrumentPicker}>
+            <View>
                 <View style={styles.selectedInstrument}>
                     <Image style={styles.selectedInstrumentImage} source={{ uri: this.state.selectedInstrumentImageSource }} />
                 </View>
@@ -58,9 +58,6 @@ const selectedInstrumentBackdropMargin = 20;
 
 const styles = StyleSheet.create({
 
-    instrumentPicker: {
-
-    },
     selectedInstrument: {
         backgroundColor: Color(color1).darken(0.1).rgb(),
         marginTop: selectedInstrumentBackdropMargin,
