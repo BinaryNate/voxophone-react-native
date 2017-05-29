@@ -4,6 +4,7 @@ import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
 import { MusicNoteEventType } from 'react-native-voxophone-engine';
 import delay from '../../utils/delay';
+import Ring from '../music-note-meter-ring';
 
 const NUMBER_OF_RINGS = 8;
 const NOTE_ON_TRANSITION_MILLISECONDS = 40;
@@ -18,7 +19,9 @@ const styles = StyleSheet.create({
     musicNoteMeter: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        // backgroundColor: 'green',
+        // borderRadius: 170
     },
     meterCenter: {
         flexGrow: 0,
@@ -35,6 +38,14 @@ const styles = StyleSheet.create({
         color: color1,
         fontSize: 72,
         fontWeight: 'bold'
+    },
+    ring2: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    ring1: {
+        flex: 1,
+        justifyContent: 'center',
     }
 });
 
@@ -61,10 +72,16 @@ export default class MusicNoteMeter extends Component {
     render() {
         return (
             <View style={styles.musicNoteMeter}>
-                <View style={styles.meterCenter}>
-                    {/*<Text style={styles.meterCenterText}>{this.state.note}</Text>*/}
-                    <Text style={styles.meterCenterText}>C#</Text>
-                </View>
+
+                <Ring
+                    backgroundColor={'red'}
+                    radius={200}
+                >
+                    <View style={styles.meterCenter}>
+                        <Text style={styles.meterCenterText}>C#</Text>
+                    </View>
+
+                </Ring>
             </View>
         );
     }
