@@ -62,11 +62,4 @@ class VoxophoneApp extends Component {
     }
 }
 
-// export default class Voxophone extends Component {
-
-//     render() {
-//         return (<NavigationStack/>);
-//     }
-// }
-
 AppRegistry.registerComponent('voxophone', () => VoxophoneApp);

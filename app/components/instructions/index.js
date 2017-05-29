@@ -15,6 +15,9 @@ export default class Instructions extends Component {
         let dependencies = this.props.dependencies || this.props.screenProps.dependencies;
         validate(dependencies, [ 'voxophone' ], this, { addPrefix: '_' });
 
+        this._navigateToPerformanceView = this._navigateToPerformanceView.bind(this);
+        this._voxophone.addMusicNoteListener(this._navigateToPerformanceView);
+
         this.state = {
             margin: new Animated.Value(MARGIN_MIN)
         };
@@ -34,13 +37,12 @@ export default class Instructions extends Component {
 
         cycleAnimation();
 
-        this._handlePress = this._handlePress.bind(this);
     }
 
     render() {
 
         return (
-            <TouchableWithoutFeedback onPress={this._handlePress}>
+            <TouchableWithoutFeedback onPress={this._navigateToPerformanceView}>
                 <View style={styles.view}>
                     <View style={styles.instructionsContainer}>
                         <Animated.Image style={[ styles.instructions, { margin: this.state.margin }]} source={require('./img/instructions-phone-down.png')}/>
@@ -53,8 +55,11 @@ export default class Instructions extends Component {
         );
     }
 
-    _handlePress() {
+    _navigateToPerformanceView() {
 
+        if (this._navigated)
+            return;
+        this._navigated = true;
         this.props.navigation.navigate('PerformanceView');
     }
 }
