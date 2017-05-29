@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import InstrumentPicker from '../instrument-picker';
-import MusicNoteMeter from '../music-note-meter';
+import InstrumentPicker from './InstrumentPicker';
+import MusicNoteMeter from './MusicNoteMeter';
 
 /**
 * The main, top-level application component in which constituent components are nested.
@@ -17,7 +17,6 @@ export default class PerformanceView extends Component {
         this._handleMeterLayout = this._handleMeterLayout.bind(this);
         // Allow dependencies to be passed in `screenProps` for react-navigation.
         this._dependencies = this.props.dependencies || this.props.screenProps.dependencies;
-
     }
 
     render() {

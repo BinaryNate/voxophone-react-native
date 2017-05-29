@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import _ from 'lodash';
 import { validate } from 'parameter-validator';
-import { color1 } from '../../style-variables';
+import { color1 } from '../style-variables';
 import { MusicNoteEventType } from 'react-native-voxophone-engine';
-import delay from '../../utils/delay';
-import Ring from '../music-note-meter-ring';
+import delay from '../utils/delay';
+import Ring from './MusicNoteMeterRing';
 
 const NUMBER_OF_RINGS = 8,
     NOTE_ON_TRANSITION_MILLISECONDS = 40,

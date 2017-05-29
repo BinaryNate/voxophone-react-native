@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, Image, ScrollView, StyleSheet } from 'react-native';
 import Color from 'color';
 import { validate } from 'parameter-validator';
-import { color1 } from '../../style-variables';
-import Instrument from '../instrument';
+import { color1 } from '../style-variables';
+import Instrument from './Instrument';
 
 /**
 * Displays the available instruments for selection and the currently selected instrument.
