@@ -6,13 +6,13 @@ export default class MusicNoteMeterRing extends Component {
 
     render() {
 
-        const { radius } = this.props;
+        const { diameter } = this.props;
 
         let dynamicStyle = {
 
-            width: radius,
-            height: radius,
-            borderRadius: radius / 2
+            width: diameter,
+            height: diameter,
+            borderRadius: diameter / 2
         };
 
         return (

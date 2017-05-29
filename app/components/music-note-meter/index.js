@@ -73,14 +73,12 @@ export default class MusicNoteMeter extends Component {
         return (
             <View style={styles.musicNoteMeter}>
 
-                <Ring
-                    backgroundColor={'red'}
-                    radius={200}
-                >
-                    <View style={styles.meterCenter}>
-                        <Text style={styles.meterCenterText}>C#</Text>
-                    </View>
-
+                <Ring backgroundColor={'green'} diameter={Math.max(this.props.diameter - 100, 0)}>
+                    <Ring backgroundColor={'red'} diameter={Math.max(this.props.diameter - 200, 0)}>
+                        <View style={styles.meterCenter}>
+                            <Text style={styles.meterCenterText}>C#</Text>
+                        </View>
+                    </Ring>
                 </Ring>
             </View>
         );
