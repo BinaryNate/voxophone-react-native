@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import { MainBundlePath } from 'react-native-fs';
 import Instructions from './app/components/instructions';
+import PerformanceView from './app/components/performance-view';
 import Logger from './app/utils/Logger';
 import VoxophoneEngine from 'react-native-voxophone-engine';
 import FileSystemJsonStorage from './app/models/storage/FileSystemJsonStorage';
@@ -37,12 +39,34 @@ instrumentManager.getInstruments()
     logger.error('an error occurred while fetching the instruments', { error });
 })
 
+const Navigator = StackNavigator(
+    {
+        Instructions: {
+            screen: Instructions
+        },
+        PerformanceView: {
+            screen: PerformanceView
+        }
+    },
+    {
+        navigationOptions: {
+            header: null
+        }
+    }
+);
 
-export default class Voxophone extends Component {
+class VoxophoneApp extends Component {
 
     render() {
-        return (<Instructions dependencies={dependencies}/>);
+        return (<Navigator screenProps={{ dependencies }}/>);
     }
 }
 
-AppRegistry.registerComponent('voxophone', () => Voxophone);
+// export default class Voxophone extends Component {
+
+//     render() {
+//         return (<NavigationStack/>);
+//     }
+// }
+
+AppRegistry.registerComponent('voxophone', () => VoxophoneApp);

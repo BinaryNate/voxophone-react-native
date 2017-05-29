@@ -11,7 +11,9 @@ export default class Instructions extends Component {
     constructor(props) {
 
         super(props);
-        validate(props.dependencies, [ 'logger', 'voxophone' ], this, { addPrefix: '_' });
+        // Allow dependencies to be passed in `screenProps` for react-navigation.
+        let dependencies = this.props.dependencies || this.props.screenProps.dependencies;
+        validate(dependencies, [ 'voxophone' ], this, { addPrefix: '_' });
 
         this.state = {
             margin: new Animated.Value(MARGIN_MIN)
@@ -52,7 +54,8 @@ const styles = StyleSheet.create({
 
     view: {
         justifyContent: 'flex-end',
-        flex: 1
+        flex: 1,
+        backgroundColor: 'white'
     },
 
     instructionsContainer: {

@@ -15,15 +15,18 @@ export default class PerformanceView extends Component {
             meterDiameter: 0
         };
         this._handleMeterLayout = this._handleMeterLayout.bind(this);
+        // Allow dependencies to be passed in `screenProps` for react-navigation.
+        this._dependencies = this.props.dependencies || this.props.screenProps.dependencies;
+
     }
 
     render() {
         return (
             <View style={styles.performanceView}>
                 <View style={styles.musicNoteMeterContainer} onLayout={this._handleMeterLayout}>
-                    <MusicNoteMeter dependencies={this.props.dependencies} diameter={this.state.meterDiameter} />
+                    <MusicNoteMeter dependencies={this._dependencies} diameter={this.state.meterDiameter} />
                 </View>
-                {<InstrumentPicker dependencies={this.props.dependencies} />}
+                {<InstrumentPicker dependencies={this._dependencies} />}
             </View>
         );
     }
