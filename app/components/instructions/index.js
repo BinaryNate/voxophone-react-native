@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Animated } from 'react-native';
+import { View, Image, StyleSheet, Animated, TouchableWithoutFeedback } from 'react-native';
 import { validate } from 'parameter-validator';
 
 const MARGIN_MIN = 20;
@@ -33,20 +33,29 @@ export default class Instructions extends Component {
         }
 
         cycleAnimation();
+
+        this._handlePress = this._handlePress.bind(this);
     }
 
     render() {
 
         return (
-            <View style={styles.view}>
-                <View style={styles.instructionsContainer}>
-                    <Animated.Image style={[ styles.instructions, { margin: this.state.margin }]} source={require('./img/instructions-phone-down.png')}/>
+            <TouchableWithoutFeedback onPress={this._handlePress}>
+                <View style={styles.view}>
+                    <View style={styles.instructionsContainer}>
+                        <Animated.Image style={[ styles.instructions, { margin: this.state.margin }]} source={require('./img/instructions-phone-down.png')}/>
+                    </View>
+                    <View style={styles.okButtonContainer}>
+                        <Image style={styles.okButton} source={require('./img/check-mark-button.png')}/>
+                    </View>
                 </View>
-                <View style={styles.okButtonContainer}>
-                    <Image style={styles.okButton} source={require('./img/check-mark-button.png')}/>
-                </View>
-            </View>
+            </TouchableWithoutFeedback>
         );
+    }
+
+    _handlePress() {
+
+        this.props.navigation.navigate('PerformanceView');
     }
 }
 

@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
 
     performanceView: {
         flexDirection: 'column',
-        flex: 1
+        flex: 1,
+        backgroundColor: 'white'
     },
     musicNoteMeterContainer: {
         flexGrow: 1,
