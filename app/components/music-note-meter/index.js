@@ -38,14 +38,6 @@ const styles = StyleSheet.create({
         color: color1,
         fontSize: 72,
         fontWeight: 'bold'
-    },
-    ring2: {
-        flex: 1,
-        justifyContent: 'center',
-    },
-    ring1: {
-        flex: 1,
-        justifyContent: 'center',
     }
 });
 
@@ -73,14 +65,21 @@ export default class MusicNoteMeter extends Component {
         return (
             <View style={styles.musicNoteMeter}>
 
-                <Ring backgroundColor={'green'} diameter={Math.max(this.props.diameter - 100, 0)}>
-                    <Ring backgroundColor={'red'} diameter={Math.max(this.props.diameter - 200, 0)}>
-                        <View style={styles.meterCenter}>
-                            <Text style={styles.meterCenterText}>C#</Text>
-                        </View>
-                    </Ring>
-                </Ring>
+                {this._renderRings(NUMBER_OF_RINGS,
+                    <View style={styles.meterCenter}>
+                        <Text style={styles.meterCenterText}>C#</Text>
+                    </View>
+                )}
             </View>
+        );
+    }
+
+    _renderRings(numberOfRingsLeft, center) {
+
+        return (
+            <Ring backgroundColor={this._getRandomColor()} diameter={Math.max(this.props.diameter - ((NUMBER_OF_RINGS - numberOfRingsLeft) * 25), 0)}>
+                {--numberOfRingsLeft > 0 ? this._renderRings(numberOfRingsLeft, center) : center}
+            </Ring>
         );
     }
 
