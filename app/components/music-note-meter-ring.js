@@ -9,7 +9,6 @@ export default class MusicNoteMeterRing extends Component {
         const { diameter } = this.props;
 
         let dynamicStyle = {
-
             width: diameter,
             height: diameter,
             borderRadius: diameter / 2
@@ -24,10 +23,6 @@ export default class MusicNoteMeterRing extends Component {
             </View>
         );
     }
-
-    // _handleLayout({ height, width }) {
-
-    // }
 }
 
 const styles = StyleSheet.create({

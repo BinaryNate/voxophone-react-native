@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { MainBundlePath } from 'react-native-fs';
-import PerformanceView from './app/components/performance-view';
+import Instructions from './app/components/instructions';
 import Logger from './app/utils/Logger';
 import VoxophoneEngine from 'react-native-voxophone-engine';
 import FileSystemJsonStorage from './app/models/storage/FileSystemJsonStorage';
@@ -41,7 +41,7 @@ instrumentManager.getInstruments()
 export default class Voxophone extends Component {
 
     render() {
-        return (<PerformanceView dependencies={dependencies}/>);
+        return (<Instructions dependencies={dependencies}/>);
     }
 }
 
