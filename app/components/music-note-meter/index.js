@@ -65,7 +65,7 @@ export default class MusicNoteMeter extends Component {
         return (
             <View style={styles.musicNoteMeter}>
 
-                {this._renderRings(NUMBER_OF_RINGS,
+                {this._renderRings(NUMBER_OF_RINGS, this.props.diameter, meterCenterDiameter,
                     <View style={styles.meterCenter}>
                         <Text style={styles.meterCenterText}>C#</Text>
                     </View>
@@ -74,11 +74,17 @@ export default class MusicNoteMeter extends Component {
         );
     }
 
-    _renderRings(numberOfRingsLeft, center) {
+    _renderRings(numberOfRingsLeft, diameter, centerDiameter, center) {
+
+        let radius = diameter / 2,
+            centerRadius = centerDiameter / 2,
+            distanceToCenter = radius - centerRadius,
+            ringThickness = Math.floor(distanceToCenter / numberOfRingsLeft),
+            nextRingDiameter = diameter - (ringThickness * 2);
 
         return (
-            <Ring backgroundColor={this._getRandomColor()} diameter={Math.max(this.props.diameter - ((NUMBER_OF_RINGS - numberOfRingsLeft) * 25), 0)}>
-                {--numberOfRingsLeft > 0 ? this._renderRings(numberOfRingsLeft, center) : center}
+            <Ring backgroundColor={this._getRandomColor()} diameter={diameter}>
+                {--numberOfRingsLeft > 0 ? this._renderRings(numberOfRingsLeft, nextRingDiameter, centerDiameter, center) : center}
             </Ring>
         );
     }
