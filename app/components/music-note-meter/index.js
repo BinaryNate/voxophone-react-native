@@ -8,9 +8,9 @@ import delay from '../../utils/delay';
 import Ring from '../music-note-meter-ring';
 
 const NUMBER_OF_RINGS = 8,
-      NOTE_ON_TRANSITION_MILLISECONDS = 40,
-      NOTE_OFF_TRANSITION_MILLISECONDS = 100,
-      METER_CENTER_DIAMETER = 140;
+    NOTE_ON_TRANSITION_MILLISECONDS = 40,
+    NOTE_OFF_TRANSITION_MILLISECONDS = 100,
+    METER_CENTER_DIAMETER = 140;
 
 /**
 * Illustrates the volume envelope of a note played using concentric circles and
@@ -28,8 +28,6 @@ export default class MusicNoteMeter extends Component {
             note: '',
             rings: _.range(NUMBER_OF_RINGS).map(() => ({ isVisible: false, color: 'white' }))
         };
-
-        this._blink();
     }
 
     render() {
@@ -38,7 +36,7 @@ export default class MusicNoteMeter extends Component {
 
                 {this._renderRings(this.state.rings, this.props.diameter, METER_CENTER_DIAMETER,
                     <View style={styles.meterCenter}>
-                        <Text style={styles.meterCenterText}>C#</Text>
+                        <Text style={styles.meterCenterText}>{this.state.note}</Text>
                     </View>
                 )}
             </View>
@@ -60,25 +58,12 @@ export default class MusicNoteMeter extends Component {
         );
     }
 
-    _blink() {
-
-        return delay(2000)
-        .then(() => {
-
-            this._noteIsOn = !this._noteIsOn;
-            return this._noteIsOn ? this._noteOn('C#') : this._noteOff();
-        })
-        .then(() => this._blink());
-    }
-
     _handleMusicNoteEvent(event) {
 
         if (event.type === MusicNoteEventType.NOTE_ON) {
-
-            this.setState({ note: event.note });
-            // this._noteOn(event.note);
+            this._noteOn(event.note);
         } else {
-            // this._noteOff();
+            this._noteOff();
         }
     }
 
@@ -134,6 +119,20 @@ export default class MusicNoteMeter extends Component {
         let num = Math.floor(Math.random() * 0xFFFFFF);
         let hex = num.toString(16).padStart(6, '0');
         return '#' + hex;
+    }
+
+    /**
+    * A method that blinks the music note display animation for testing.
+    */
+    _blink() {
+
+        return delay(2000)
+        .then(() => {
+
+            this._noteIsOn = !this._noteIsOn;
+            return this._noteIsOn ? this._noteOn('C#') : this._noteOff();
+        })
+        .then(() => this._blink());
     }
 }
 
