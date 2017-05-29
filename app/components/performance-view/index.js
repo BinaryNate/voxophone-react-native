@@ -14,9 +14,9 @@ export default class PerformanceView extends Component {
                 <View style={styles.performanceView}>
 
                     <View style={styles.musicNoteMeterContainer}>
-                        <MusicNoteMeter dependencies={this.props.dependencies}/>
+                        <MusicNoteMeter dependencies={this.props.dependencies} />
                     </View>
-                    {<InstrumentPicker dependencies={this.props.dependencies}/>}
+                    {<InstrumentPicker dependencies={this.props.dependencies} />}
                 </View>
             </View>
         );

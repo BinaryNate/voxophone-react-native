@@ -19,12 +19,6 @@ let instrumentManager = new InstrumentManager({
     fileInfoStorage: new FileInfoStorage({ logger, directoryPath: `${storageBasePath}/fileInfo` })
 });
 
-// Use this stub for the voxophone audio engine until a wrapper for the audio engine is created.
-// let voxophone = {
-//     addMusicNoteListener() {},
-//     setInstrument() {}
-// };
-
 const voxophone = new VoxophoneEngine({ logger });
 
 const dependencies = {

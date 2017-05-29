@@ -14,6 +14,7 @@ export default class MusicNoteMeter extends Component {
         super(props);
         validate(props.dependencies, [ 'logger', 'voxophone' ], this, { addPrefix: '_' });
         this._voxophone.addMusicNoteListener(this._handleMusicNoteEvent.bind(this));
+        this.state = { note: '' };
     }
 
     render() {
@@ -21,8 +22,7 @@ export default class MusicNoteMeter extends Component {
             <View style={styles.musicNoteMeter}>
 
                 <View style={styles.meterCenter}>
-                    <Text style={styles.meterCenterText}>C#</Text>
-                    {/*<Text>{this.note}</Text>*/}
+                    <Text style={styles.meterCenterText}>{this.state.note}</Text>
                 </View>
             </View>
         );
@@ -31,6 +31,8 @@ export default class MusicNoteMeter extends Component {
     _handleMusicNoteEvent(event) {
 
         this._logger.info('received music note event: ' + JSON.stringify(event));
+        let { note } = event;
+        this.setState({ note });
     }
 }
 
