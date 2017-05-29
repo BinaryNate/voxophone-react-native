@@ -76,11 +76,9 @@ export default class MusicNoteMeter extends Component {
 
     _renderRings(numberOfRingsLeft, diameter, centerDiameter, center) {
 
-        let radius = diameter / 2,
-            centerRadius = centerDiameter / 2,
-            distanceToCenter = radius - centerRadius,
+        let distanceToCenter = diameter - centerDiameter,
             ringThickness = Math.floor(distanceToCenter / numberOfRingsLeft),
-            nextRingDiameter = diameter - (ringThickness * 2);
+            nextRingDiameter = diameter - ringThickness;
 
         return (
             <Ring backgroundColor={this._getRandomColor()} diameter={diameter}>
