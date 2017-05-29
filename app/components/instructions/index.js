@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { validate } from 'parameter-validator';
 
+console.disableYellowBox = true;
+
 export default class Instructions extends Component {
 
     constructor(props) {
@@ -43,18 +45,14 @@ const styles = StyleSheet.create({
         width: undefined
     },
     okButtonContainer: {
-        flexGrow: 0,
-        flexShrink: 1,
-        flexBasis: 'auto',
+        flex: 0,
         flexDirection: 'row',
-        height: 60,
-        marginBottom: 20,
-        marginRight: 60,
         justifyContent: 'flex-end'
     },
     okButton: {
-        resizeMode: 'contain',
-        height: undefined,
-        flex: 1
+        marginBottom: 20,
+        marginRight: 60,
+        height: 60,
+        width: 60
     }
 });
