@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import _ from 'lodash';
 import { validate } from 'parameter-validator';
 import { color1 } from '../../style-variables';
 import { MusicNoteEventType } from 'react-native-voxophone-engine';
@@ -52,20 +53,20 @@ export default class MusicNoteMeter extends Component {
         super(props);
         validate(props.dependencies, [ 'logger', 'voxophone' ], this, { addPrefix: '_' });
         this._voxophone.addMusicNoteListener(this._handleMusicNoteEvent.bind(this));
-        this.state = { note: '' };
 
-        // return this._createAndConfigureRings()
-        // .then(rings => {
-        //     this._rings = rings;
-        //     this._noteOff();
-        // });
+        this.state = {
+            note: '',
+            rings: _.range(NUMBER_OF_RINGS).map(() => ({ isVisible: false, color: 'white' }))
+        };
+
+        this._blink();
     }
 
     render() {
         return (
             <View style={styles.musicNoteMeter}>
 
-                {this._renderRings(NUMBER_OF_RINGS, this.props.diameter, meterCenterDiameter,
+                {this._renderRings(this.state.rings, this.props.diameter, meterCenterDiameter,
                     <View style={styles.meterCenter}>
                         <Text style={styles.meterCenterText}>C#</Text>
                     </View>
@@ -74,17 +75,30 @@ export default class MusicNoteMeter extends Component {
         );
     }
 
-    _renderRings(numberOfRingsLeft, diameter, centerDiameter, center) {
+    _renderRings(rings, diameter, centerDiameter, center) {
 
         let distanceToCenter = diameter - centerDiameter,
-            ringThickness = Math.floor(distanceToCenter / numberOfRingsLeft),
-            nextRingDiameter = diameter - ringThickness;
+            ringThickness = Math.floor(distanceToCenter / rings.length),
+            nextRingDiameter = diameter - ringThickness,
+            ring = rings[0],
+            color = ring.isVisible ? ring.color : 'white';
 
         return (
-            <Ring backgroundColor={this._getRandomColor()} diameter={diameter}>
-                {--numberOfRingsLeft > 0 ? this._renderRings(numberOfRingsLeft, nextRingDiameter, centerDiameter, center) : center}
+            <Ring backgroundColor={color} diameter={diameter}>
+                {rings.length > 1 ? this._renderRings(rings.slice(1), nextRingDiameter, centerDiameter, center) : center}
             </Ring>
         );
+    }
+
+    _blink() {
+
+        return delay(2000)
+        .then(() => {
+
+            this._noteIsOn = !this._noteIsOn;
+            return this._noteIsOn ? this._noteOn('C#') : this._noteOff();
+        })
+        .then(() => this._blink());
     }
 
     _handleMusicNoteEvent(event) {
@@ -107,14 +121,21 @@ export default class MusicNoteMeter extends Component {
     */
     _noteOn(note) {
 
-        let delayPerRing = NOTE_ON_TRANSITION_MILLISECONDS / this._rings.length;
-        let promisedDisplayUpdate = Promise.resolve().then(() => this.set('note', note));
+        let reversedRings = [ ...this.state.rings ].reverse();
+        let delayPerRing = NOTE_ON_TRANSITION_MILLISECONDS / this.state.rings.length;
+        let promisedDisplayUpdate = Promise.resolve().then(() => this.setState({ note }));
 
         // Sequentially render each ring, adding a delay between each to stretch it out to the desired time.
-        return this._rings.reduce((promise, ring) => {
+        return reversedRings.reduce((promise, ring) => {
             return promise
-            .then(() => this._setRingVisibility(ring, true))
-            .then(() => delay(delayPerRing));
+            .then(() => {
+                ring.color = this._getRandomColor();
+                ring.isVisible = true;
+                this.setState({
+                    rings: this.state.rings
+                });
+                return delay(delayPerRing)
+            });
         }, promisedDisplayUpdate);
     }
 
@@ -123,26 +144,19 @@ export default class MusicNoteMeter extends Component {
     */
     _noteOff() {
 
-        let reversedRings = [ ...this._rings ].reverse();
-        let delayPerRing = NOTE_OFF_TRANSITION_MILLISECONDS / this._rings.length;
+        let delayPerRing = NOTE_OFF_TRANSITION_MILLISECONDS / this.state.rings.length;
 
         // Sequentially erase each ring, adding a delay between each to stretch it out to the desired time.
-        return reversedRings.reduce((promise, ring) => {
+        return this.state.rings.reduce((promise, ring) => {
             return promise
-            .then(() => this._setRingVisibility(ring, false))
-            .then(() => delay(delayPerRing));
+            .then(() => {
+                ring.isVisible = false;
+                this.setState({
+                    rings: this.state.rings
+                });
+                return delay(delayPerRing);
+            });
         }, Promise.resolve());
-    }
-
-    /**
-    * Draws or hides the given ring.
-    *
-    * @param {ui/View} ring
-    * @param {boolean} isVisible
-    */
-    _setRingVisibility(ring, isVisible) {
-
-        ring.backgroundColor = isVisible ? this._getColorForRing(ring) : this.view.page.backgroundColor;
     }
 
     /**
