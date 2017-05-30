@@ -21,7 +21,7 @@ export default class MusicNoteMeter extends Component {
     constructor(props) {
 
         super(props);
-        validate(props.dependencies, [ 'logger', 'voxophone' ], this, { addPrefix: '_' });
+        validate(props.dependencies, [ 'voxophone' ], this, { addPrefix: '_' });
         this._voxophone.addMusicNoteListener(this._handleMusicNoteEvent.bind(this));
 
         this.state = {
@@ -43,6 +43,14 @@ export default class MusicNoteMeter extends Component {
         );
     }
 
+    /**
+    * @param {Object}  rings
+    * @param {boolean} rings.isVisible
+    * @param {string}  rings.color
+    * @param {int}     diameter
+    * @param {int}     centerDiameter
+    * @param {Object}  center          - JSX to render in the center of the rings.
+    */
     _renderRings(rings, diameter, centerDiameter, center) {
 
         let distanceToCenter = diameter - centerDiameter,
@@ -141,9 +149,7 @@ const styles = StyleSheet.create({
     musicNoteMeter: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        // backgroundColor: 'green',
-        // borderRadius: 170
+        justifyContent: 'center'
     },
     meterCenter: {
         flexGrow: 0,

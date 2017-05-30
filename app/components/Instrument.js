@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableHighlight, Image, StyleSheet } from 'react-native';
 
 /**
-* An available instrument which can be selected.
+* An available instrument that can be selected.
 */
 export default class Instrument extends Component {
 

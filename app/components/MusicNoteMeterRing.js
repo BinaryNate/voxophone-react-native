@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-
+/**
+* A ring used in the MusicNoteMeter display, which animates when a note is played.
+*/
 export default class MusicNoteMeterRing extends Component {
 
     render() {

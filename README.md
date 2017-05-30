@@ -12,10 +12,6 @@ Voxophone is [available for free from the Apple App Store](https://itunes.apple.
 
 ## Code
 
-This repo contains the source code for Voxophone's user interface, which is built with [NativeScript](https://docs.nativescript.org/), an excellent library for developing native, cross-platform mobile apps using JavaScript, CSS, and XML. This code is open source to be used as a reference for:
-
-- developers interested in using NativeScript
-- NativeScript developers interested in using my [nativescript-component](https://github.com/BinaryNate/nativescript-component) library for creating reusable UI components
-- people interested in learning programming in general
+The version of the app that is currently in the App Store was developed with [NativeScript](https://docs.nativescript.org/), a framework for developing native, cross-platform mobile apps using JavaScript, CSS, and XML. The code in this repository is a port of that code to React-Native, which is a similar cross-platform framework. The purpose of this port was to evaluate React-Native and compare the two frameworks. With a few exceptions, this version has reached feature parity with the [original NativeScript version](https://github.com/BinaryNate/voxophone).
 
 While this repo contains Voxophone's user interface, it does not include its proprietary audio engine, which is required to be able to build and run the app. So, this code is provided for informational purposes, but cannot be built as-is.

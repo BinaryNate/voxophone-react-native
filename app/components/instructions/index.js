@@ -6,6 +6,9 @@ const MARGIN_MIN = 20;
 const MARGIN_MAX = 50;
 const MARGIN_ANIMATION_DURATION = 4000;
 
+/**
+* Presents an image to the user hinting at how to use the app.
+*/
 export default class Instructions extends Component {
 
     constructor(props) {
@@ -21,22 +24,7 @@ export default class Instructions extends Component {
         this.state = {
             margin: new Animated.Value(MARGIN_MIN)
         };
-
-        let cycleAnimation = () => {
-            Animated.sequence([
-                Animated.timing(this.state.margin, {
-                    toValue: MARGIN_MAX,
-                    duration: MARGIN_ANIMATION_DURATION
-                }),
-                Animated.timing(this.state.margin, {
-                    toValue: MARGIN_MIN,
-                    duration: MARGIN_ANIMATION_DURATION
-                })
-            ]).start(() => cycleAnimation());
-        }
-
-        cycleAnimation();
-
+        this._cycleMarginAnimation();
     }
 
     render() {
@@ -53,6 +41,24 @@ export default class Instructions extends Component {
                 </View>
             </TouchableWithoutFeedback>
         );
+    }
+
+    /**
+    * Continuously increases and decreases the margin around the instructional picture to give the illusion that it is floating
+    * away from and toward the user.
+    */
+    _cycleMarginAnimation() {
+
+        Animated.sequence([
+            Animated.timing(this.state.margin, {
+                toValue: MARGIN_MAX,
+                duration: MARGIN_ANIMATION_DURATION
+            }),
+            Animated.timing(this.state.margin, {
+                toValue: MARGIN_MIN,
+                duration: MARGIN_ANIMATION_DURATION
+            })
+        ]).start(() => this._cycleMarginAnimation());
     }
 
     _navigateToPerformanceView() {

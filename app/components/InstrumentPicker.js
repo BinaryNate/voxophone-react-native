@@ -22,7 +22,7 @@ export default class InstrumentPicker extends Component {
 
         this._instrumentManager.getInstruments()
         .then(instruments => {
-            // The context objects that will be bound to the nested `instrument` components.
+            // The data that will be used to render the selectable `Instrument` components.
             let instrumentOptions = instruments.map(instrument => ({
                 // Pass the child a component a function it can call to set its instrument as the selected one.
                 handleInstrumentSelected: () => this._setInstrument(instrument),
