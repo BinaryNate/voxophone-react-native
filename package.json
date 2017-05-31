@@ -21,7 +21,6 @@
     "react-native-fs": "^2.3.2",
     "react-native-voxophone-engine": "git+ssh://git@bitbucket.org/binarynate/react-native-voxophone-engine.git",
     "react-navigation": "^1.0.0-beta.11",
-    "tns-core-modules": "2.5.2",
     "uuid": "^3.0.1",
     "winston": "^2.3.1"
   },
